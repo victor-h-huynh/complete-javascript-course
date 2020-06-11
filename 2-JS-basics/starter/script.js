@@ -48,28 +48,60 @@
 ///////////////////////////////////////////////////////////////////
 // Basic operators
 //
-var now, yearVictor, yearMark;
-now = 2020;
-ageVictor = 27;
-ageMark = 33;
 
-// Math operators
-yearVictor = now - ageVictor;
-yearMark = now - ageMark;
+// var now, yearVictor, yearMark;
+// now = 2020;
+// ageVictor = 27;
+// ageMark = 33;
 
-console.log('yearVictor', yearVictor);
+// // Math operators
+// yearVictor = now - ageVictor;
+// yearMark = now - ageMark;
 
-console.log('now + 2', now + 2);
-console.log('now * 2', now * 2);
-console.log('now / 10', now / 10);
+// console.log('yearVictor', yearVictor);
 
-// Logical operators
-var victorOlder = ageVictor < ageMark;
-console.log(victorOlder)
+// console.log('now + 2', now + 2);
+// console.log('now * 2', now * 2);
+// console.log('now / 10', now / 10);
 
-// typeof operator
-console.log(typeof victorOlder)
-console.log(typeof ageVictor)
-console.log(typeof 'Mark is older than John');
-var x;
-console.log(typeof x);
+// // Logical operators
+// var victorOlder = ageVictor < ageMark;
+// console.log(victorOlder)
+
+// // typeof operator
+// console.log(typeof victorOlder)
+// console.log(typeof ageVictor)
+// console.log(typeof 'Mark is older than John');
+// var x;
+// console.log(typeof x);
+
+///////////////////////////////////////////////////////////////////
+// Operator precendence
+//
+
+// var now = 2020;
+// var yearVictor = 1993;
+// var fullAge = 18;
+
+// // Multiple operators
+// var isFullAge = now - yearVictor >= fullAge; // true
+// console.log('isFullAge?', isFullAge)
+
+// // Grouping
+// var ageVictor = now - yearVictor;
+// var ageMark = 35;
+// var average = (ageVictor + ageMark) / 2;
+// console.log(average);
+
+// // Multiple assignments 
+// var x, y;
+// x = y = (3 + 5) * 4 - 6; // 8 * 4 - 6 // 32 - 6 // 26
+// console.log(x, y);
+
+// // More operators
+// x *= 2; // 52
+// console.log(x);
+// x += 10; // 62
+// console.log(x);
+// x--; // 61
+// console.log(x);
