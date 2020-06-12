@@ -105,3 +105,21 @@
 // console.log(x);
 // x--; // 61
 // console.log(x);
+
+///////////////////////////////////////////////////////////////////
+// CODING SOLUTION 1
+//
+
+var markMass = 78;
+var markHeight = 1.69;
+var johnMass = 92;
+var johnHeight = 1.95;
+
+var markBMI = markMass / markHeight**2
+var johnBMI = johnMass / johnHeight**2
+
+var isMarkBMIHigher = markBMI > johnBMI;
+
+console.log('Mark BMI:', markBMI)
+console.log('John BMI:', johnBMI)
+console.log(`Is Mark's BMI higher than John's?`, isMarkBMIHigher);
