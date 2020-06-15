@@ -144,21 +144,38 @@
 //     console.log(firstName + ' will marry soon!');
 // }
 
-var markMass = 78;
-var markHeight = 1.69;
-var johnMass = 92;
-var johnHeight = 1.95;
+// var markMass = 78;
+// var markHeight = 1.69;
+// var johnMass = 92;
+// var johnHeight = 1.95;
 
-var markBMI = markMass / markHeight**2
-var johnBMI = johnMass / johnHeight**2
+// var markBMI = markMass / markHeight**2
+// var johnBMI = johnMass / johnHeight**2
 
-var isMarkBMIHigher = markBMI > johnBMI;
+// var isMarkBMIHigher = markBMI > johnBMI;
 
-console.log('Mark BMI:', markBMI)
-console.log('John BMI:', johnBMI)
+// console.log('Mark BMI:', markBMI)
+// console.log('John BMI:', johnBMI)
 
-if (markBMI > johnBMI) {
-    console.log('Mark\s BMI is higher than John\s')
+// if (markBMI > johnBMI) {
+//     console.log('Mark\s BMI is higher than John\s')
+// } else {
+//     console.log('John\s BMI is higher than Mark\s')
+// }
+
+///////////////////////////////////////////////////////////////////
+// Boolean Logic
+//
+
+var firstName = 'John';
+var age = 20;
+
+if(age < 13) {
+    console.log(firstName + ' is a boy.');
+} else if (age >= 13 && age < 20) {
+    console.log(firstName = ' is a teenager.');
+} else if (age >= 20 && age < 30) {
+    console.log(firstName = ' is a young man.')
 } else {
-    console.log('John\s BMI is higher than Mark\s')
+    console.log(firstName = ' is a man.')
 }
