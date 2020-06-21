@@ -246,9 +246,9 @@
 //         console.log(firstName + ' is a man.')
 // } 
 
-///////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
 // Truthy and Falsy values and equality operators
-//
+
 
 // falsy values: undefined, null, 0, '', NaN
 // truth values: NOT falsy values
@@ -266,3 +266,61 @@
 // if (height === '23') {
 //     console.log('The == operator does type coercion!');
 // }
+
+// const something = function something(name) {
+//     console.log(name)
+// }
+
+// const something = (name) => {
+//     console.log(name)
+// }
+
+// Figure 1 is it the same as figure 2
+// const something = (name) => {
+//     doThing(name)
+// }
+
+// const doThing = () => {
+//     console.log("Victor")
+// }
+
+// doThing()
+
+// Figure 2
+// const something = () => doSomething() 
+
+// const something = param => doSomething(param)
+
+
+// setTimeout ES5
+setTimeout(function() {
+    console.log('I promised to run after 1s')
+    setTimeout(function() {
+        console.log('I promised to run after 2s')
+    }, 1000)
+}, 1000)
+
+// First form
+const somethingB = () => {
+    console.log('Something')
+}
+
+// Second form adding a Promise object
+
+const something = (name) => new Promise((resolve, reject) => {
+    doThing(name)
+    setTimeout(resolve, 1000)
+})
+
+// Using a simple version of Promise using wait and then
+
+const wait = () => new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000)
+})
+
+wait().then(() => {
+    console.log('I promised to run after 1s')
+    return wait()
+})
+.then(() => console.log('I promised to run after 2s'))
+
