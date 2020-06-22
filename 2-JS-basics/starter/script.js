@@ -299,26 +299,37 @@ setTimeout(function() {
         console.log('I promised to run after 2s')
     }, 1000)
 }, 1000)
-
 // First form
 const somethingB = () => {
     console.log('Something')
 }
 
 // Second form adding a Promise object
+// isPromise is the same as const something. It's the way it's structured
+const isPromise = () => {
+    return new Promise((resolve, reject) => {
+        
+    })
+}
 
-const something = (name) => new Promise((resolve, reject) => {
-    doThing(name)
+// Has an implicit return but structured differently
+const something = () => new Promise((resolve, reject) => {
+    doThing()
     setTimeout(resolve, 1000)
 })
 
 // Using a simple version of Promise using wait and then
 
-const wait = () => new Promise((resolve, reject) => {
-    setTimeout(resolve, 1000)
+// 1st Constructing the Promise
+const wait = (seconds) => new Promise((resolve, reject) => {
+    const timer = seconds * 1000
+    let timeout = setTimeout(resolve, timer)
+    console.log('timeout', timeout)
+    timeout()
 })
 
-wait().then(() => {
+// Wait() runs 2nd
+wait(1).then(() => {
     console.log('I promised to run after 1s')
     return wait()
 })
