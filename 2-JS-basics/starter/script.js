@@ -433,4 +433,34 @@
 // yearsUntilRetirement(ageVictor, 'Victor')
 
 /////////////////////////////////////////////////////////////////
-// Functions
+// Function Statements and Expressions
+
+// Function declaration
+// function whatDoYouDo(job, firstName) {
+
+//}
+
+// Function express
+
+// The difference between function express vs function declaration is function express always returns a value
+
+// var whatDoYouDo = function(job, firstName) {
+//     switch(job) {
+//         case 'teacher':
+//             return firstName + ' teaches kids how to code';
+//         case 'driver':
+//             return firstName + ' drives a cab in Lisbon.';
+//         case 'designer':
+//             return firstName + ' designs beautiful websites';
+//         default:
+//             return firstName + ' does something else';
+//     }
+// }
+
+// console.log(whatDoYouDo('teacher', 'Victor'))
+// console.log(whatDoYouDo('driver', 'Matt'))
+// console.log(whatDoYouDo('designer', 'Chris'))
+// console.log(whatDoYouDo('cook', 'Joseph'))
+
+/////////////////////////////////////////////////////////////////
+// Arrays
