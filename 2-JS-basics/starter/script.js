@@ -410,19 +410,27 @@
     /////////////////////////////////////////////////////////////////
 // Functions
 
-function calculateAge(birthYear) {
-    return 2020 - birthYear
-}
+// function calculateAge(birthYear) {
+//     return 2020 - birthYear
+// }
 
-var ageMike = calculateAge(1990)
-var ageJohn = calculateAge(1996)
-var ageVictor = calculateAge(1993)
+// var ageMike = calculateAge(1990)
+// var ageJohn = calculateAge(1996)
+// var ageVictor = calculateAge(1993)
 
-console.log(ageMike, ageJohn, ageVictor)
+// console.log(ageMike, ageJohn, ageVictor)
 
-function yearsUntilRetirement(year, firstName) {
-    var remainingYear = 65 - year
-    console.log(firstName + ' will retire in ' + remainingYear)
-}
+// function yearsUntilRetirement(year, firstName) {
+//     var remainingYear = 65 - year
+//     if (remainingYear > 0) {
+//         console.log(firstName + ' will retire in ' + remainingYear)
+//     } else {
+//         console.log(firstName + ' has retired.')
+//     }
+    
+// }
 
-yearsUntilRetirement(ageVictor, 'Victor')
+// yearsUntilRetirement(ageVictor, 'Victor')
+
+/////////////////////////////////////////////////////////////////
+// Functions
