@@ -293,45 +293,136 @@
 
 
 // setTimeout ES5
-setTimeout(function() {
-    console.log('I promised to run after 1s')
-    setTimeout(function() {
-        console.log('I promised to run after 2s')
-    }, 1000)
-}, 1000)
+// setTimeout(function() {
+//     console.log('I promised to run after 1s')
+//     setTimeout(function() {
+//         console.log('I promised to run after 2s')
+//     }, 1000)
+// }, 1000)
+
 // First form
-const somethingB = () => {
-    console.log('Something')
-}
+// const somethingB = () => {
+//     console.log('Something')
+// }
 
 // Second form adding a Promise object
 // isPromise is the same as const something. It's the way it's structured
-const isPromise = () => {
-    return new Promise((resolve, reject) => {
+// const isPromise = () => {
+//     return new Promise((resolve, reject) => {
         
-    })
-}
+//     })
+// }
 
 // Has an implicit return but structured differently
-const something = () => new Promise((resolve, reject) => {
-    doThing()
-    setTimeout(resolve, 1000)
-})
+// const something = () => new Promise((resolve, reject) => {
+//     doThing()
+//     setTimeout(resolve, 1000)
+// })
 
 // Using a simple version of Promise using wait and then
 
 // 1st Constructing the Promise
-const wait = (seconds) => new Promise((resolve, reject) => {
-    const timer = seconds * 1000
-    let timeout = setTimeout(resolve, timer)
-    console.log('timeout', timeout)
-    timeout()
-})
+// const wait = (seconds) => new Promise((resolve, reject) => {
+//     const timer = seconds * 1000
+//     setTimeout(resolve, timer)
+// })
 
-// Wait() runs 2nd
-wait(1).then(() => {
-    console.log('I promised to run after 1s')
-    return wait()
-})
-.then(() => console.log('I promised to run after 2s'))
+// // Wait() runs 2nd
+// wait(1).then(() => {
+//     console.log('I promised to run after 1s')
+//     return wait()
+// })
+// .then(() => console.log('I promised to run after 2s'))
+// .catch(() => console.log('Rejected statement'))
 
+// let done = true
+// const isItDoneYet = new Promise ((resolve, reject) => {
+//     if(done) {
+//         const workDone = 'Here is the thing I built'
+//         resolve(workDone)
+//     } else {
+//         const why = 'Still working on something else'
+//         reject(why)
+//     }
+// })
+
+// const checkIfItsDone = () => {
+//     isItDoneYet
+//     .then(ok => {
+//         console.log(ok)
+//     })
+//     .catch(err => {
+//         console.error(err)
+//     })
+// }
+
+// checkIfItsDone()
+
+// const status = response => {
+//     if(response.status >= 200 && response.status < 300) {
+//         return Promise.resolve(response)
+//     }
+//     return Promise.reject(new Error(response.statusText))
+// }
+
+// const json = response => response.json()
+
+// fetch('/todos.json')
+//     .then(status)
+//     .then(json)
+//     .then(data => {
+//         console.log('Request succeeded with JSON response', data)
+//     })
+//     .catch(error => {
+//         console.log('Request failed', error)
+//     })
+
+//     console.log(fetch())
+
+//     const status = response => {
+
+//     }
+
+//     function status (response) {
+//         if (response.status >= 200 && response.status < 300) {
+//             return Promise.resolve(response)
+//         }
+//         return Promise.reject(new Error(response.statusText))
+//     }
+
+    /////////////////////////////////////////////////////////////////
+// Coding Challenge 2
+
+// var teamJohn = (89 + 120 + 103) / 3
+// var teamMike = (116 + 94 + 123) / 3
+// var teamMary = (97 + 134 + 105) / 3
+
+// if (teamMary > teamMike && teamJohn) {
+//     console.log('team Mary is the winner with ' + teamMary)
+// } else if (teamJohn > teamMike && teamMary) {
+//     console.log('team John is the winner with ' + teamJohn) 
+// } else if (teamMike > teamJohn && teamMary) 
+//     console.log('team Mike is the winner with ' + teamMike)
+// else {
+//     console.log('tie game')
+// }
+
+    /////////////////////////////////////////////////////////////////
+// Functions
+
+function calculateAge(birthYear) {
+    return 2020 - birthYear
+}
+
+var ageMike = calculateAge(1990)
+var ageJohn = calculateAge(1996)
+var ageVictor = calculateAge(1993)
+
+console.log(ageMike, ageJohn, ageVictor)
+
+function yearsUntilRetirement(year, firstName) {
+    var remainingYear = 65 - year
+    console.log(firstName + ' will retire in ' + remainingYear)
+}
+
+yearsUntilRetirement(ageVictor, 'Victor')
