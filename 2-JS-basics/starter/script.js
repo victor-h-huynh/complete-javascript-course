@@ -491,3 +491,23 @@
 // var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John is a designer';
 // console.log(isDesigner)
 
+var bills = [124, 48, 268]
+var tips = [];
+var finalBill = [];
+
+function calculateBills (total) {
+    for(var i = 0; i < total.length; i++) {
+        if(total[i] <= 50) {
+            tips.push(total[i] * 0.2)
+        } else if (total[i] <= 200) {
+            tips.push(total[i] * 0.15)
+        } else {
+            tips.push(total[i] * 0.1)
+        }
+        finalBill.push(tips[i] + bills[i])
+    }
+}
+
+console.log(calculateBills(bills))
+console.log(tips)
+console.log(finalBill)
