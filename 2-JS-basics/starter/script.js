@@ -491,23 +491,67 @@
 // var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John is a designer';
 // console.log(isDesigner)
 
-var bills = [124, 48, 268]
-var tips = [];
-var finalBill = [];
+// var bills = [124, 48, 268]
+// var tips = [];
+// var finalBill = [];
 
-function calculateBills (total) {
-    for(var i = 0; i < total.length; i++) {
-        if(total[i] <= 50) {
-            tips.push(total[i] * 0.2)
-        } else if (total[i] <= 200) {
-            tips.push(total[i] * 0.15)
-        } else {
-            tips.push(total[i] * 0.1)
-        }
-        finalBill.push(tips[i] + bills[i])
+// function calculateBills (total) {
+//     for(var i = 0; i < total.length; i++) {
+//         if(total[i] <= 50) {
+//             tips.push(total[i] * 0.2)
+//         } else if (total[i] <= 200) {
+//             tips.push(total[i] * 0.15)
+//         } else {
+//             tips.push(total[i] * 0.1)
+//         }
+//         finalBill.push(tips[i] + bills[i])
+//     }
+// }
+
+// console.log(calculateBills(bills))
+// console.log(tips)
+// console.log(finalBill)
+
+/////////////////////////////////////////////////////////////////
+// Objects and properties
+
+// Object literal
+// var john = {
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     birthYear: 1990,
+//     family: [['Jane', 'Mark'],['Bob', 'Emily']],
+//     job: 'teacher',
+//     isMarried: false
+// };
+
+// console.log(john);
+// john.firstName = 21;
+// john.family[1][1] = 'Victor'
+// john.isMarried = true
+// console.log(john);
+
+// // new Object syntax
+// var jane = new Object();
+// jane.firstName = 'Jane';
+// jane.birthYear = 1969;
+// jane['lastName'] = 'Smith';
+// console.log(jane)
+
+/////////////////////////////////////////////////////////////////
+// Objects and methods
+
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calculateAge: function() {
+        this.age = 2020 - this.birthYear;
     }
-}
+};
 
-console.log(calculateBills(bills))
-console.log(tips)
-console.log(finalBill)
+john.calculateAge()
+console.log(john)
