@@ -541,17 +541,52 @@
 /////////////////////////////////////////////////////////////////
 // Objects and methods
 
+// var john = {
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     birthYear: 1990,
+//     family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//     job: 'teacher',
+//     isMarried: false,
+//     calculateAge: function() {
+//         this.age = 2020 - this.birthYear;
+//     }
+// };
+
+// john.calculateAge()
+// console.log(john)
+
+/////////////////////////////////////////////////////////////////
+// Coding Challenge 4
+
 var john = {
     firstName: 'John',
-    lastName: 'Smith',
-    birthYear: 1990,
-    family: ['Jane', 'Mark', 'Bob', 'Emily'],
-    job: 'teacher',
-    isMarried: false,
-    calculateAge: function() {
-        this.age = 2020 - this.birthYear;
+    mass: 92,
+    height: 1.95,
+    calcBMI: function() {
+        this.BMI = this.mass / (this.height * this.height);
+        return this.BMI;
     }
-};
+}
 
-john.calculateAge()
-console.log(john)
+var mark = {
+    firstName: 'Mark',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function() {
+        this.BMI = this.mass / (this.height * this.height);
+        return this.BMI;
+    }
+}
+
+var johnBMI = john.calcBMI();
+console.log(john);
+
+var markBMI = mark.calcBMI()
+console.log(mark);
+
+if(johnBMI > markBMI) {
+    console.log(john.firstName + ' BMI is higher of' + john.BMI)
+} else {
+    console.log(mark.firstName + ' BMI is higher of ' + john.BMI)
+}
