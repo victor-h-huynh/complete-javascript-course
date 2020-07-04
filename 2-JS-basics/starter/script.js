@@ -633,3 +633,75 @@
 // for(var i = john.length - 1; i >= 0; i--) {
 //     console.log('Reverse loop', john[i])
 // }
+
+/////////////////////////////////////////////////////////////////
+// Coding Challenge 5
+
+var billJohn = {
+    tip: [],
+    total: [],
+    amount: [124, 48, 268, 180, 42],
+    calcTip: function() {
+        for(var i = 0; i < this.amount.length; i++) {
+            var percentage;
+            var bill = this.amount[i]
+            if(bill < 50) {
+                percentage = 0.2
+                this.tip.push(bill * percentage)
+            } else if(bill < 200) {
+                percentage = 0.15
+                this.tip.push(bill * percentage)
+            } else {
+                percentage = 0.1
+                this.tip.push(bill * percentage)
+            }
+            this.total.push(this.tip[i] + bill)
+        }
+    }
+}
+
+billJohn.calcTip();
+console.log(billJohn)
+
+var billMark = {
+    tip: [],
+    total: [],
+    amount: [77, 475, 110, 45],
+    calcTip: function() {
+        for(var i = 0; i < this.amount.length; i++) {
+            var percentage;
+            var bill = this.amount[i]
+            if(bill < 100) {
+                percentage = 0.2
+                this.tip.push(bill * percentage)
+            } else if(bill < 300) {
+                percentage = 0.1
+                this.tip.push(bill * 0.1)
+            } else {
+                percentage = 0.25
+                this.tip.push(bill * 0.25)
+            }
+            this.total.push(this.tip[i] + bill)
+        }
+    }
+}
+
+function calculateAvg (tip) {
+    var totalAverage = 0;
+    for(var i = 0; i < tip.length; i++) {
+        totalAverage = totalAverage + tip[i];
+    }
+    return totalAverage / tip.length
+}
+
+billMark.calcTip();
+console.log(billMark)
+
+billJohn.average = calculateAvg(billJohn.tip)
+billMark.average = calculateAvg(billMark.tip)
+
+if (billJohn.average > billMark.average) {
+    console.log('bill John is higher with ' + billJohn.average)
+} else {
+    console.log('bill Mark is higher with ' + billMark.average)
+}
