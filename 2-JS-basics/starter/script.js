@@ -2,11 +2,12 @@
  * Variables and data types
  */
 
-// var firstName = 'John';
+var firstName = 'John';
+// firstName = 'Maggie'
 // console.log(firstName);
 
 // var lastName = 'Smith';
-// var age = 28;
+var age = 28;
 
 // var fullAge = true;
 // console.log(fullAge);
@@ -54,21 +55,21 @@
 // ageVictor = 27;
 // ageMark = 33;
 
-// // Math operators
+// Math operators
 // yearVictor = now - ageVictor;
 // yearMark = now - ageMark;
 
-// console.log('yearVictor', yearVictor);
+// console.log('yearVictor', yearVictor)
 
 // console.log('now + 2', now + 2);
 // console.log('now * 2', now * 2);
 // console.log('now / 10', now / 10);
 
-// // Logical operators
+// // // Logical operators
 // var victorOlder = ageVictor < ageMark;
 // console.log(victorOlder)
 
-// // typeof operator
+// typeof operator
 // console.log(typeof victorOlder)
 // console.log(typeof ageVictor)
 // console.log(typeof 'Mark is older than John');
@@ -84,7 +85,7 @@
 // var fullAge = 18;
 
 // // Multiple operators
-// var isFullAge = now - yearVictor >= fullAge; // true
+// var isFullAge = 2020 - 1993 >= 18; // true
 // console.log('isFullAge?', isFullAge)
 
 // // Grouping
@@ -99,11 +100,15 @@
 // console.log(x, y);
 
 // // More operators
-// x *= 2; // 52
+// var x = 5
+// x = x * 2
+// console.log(x)
+// x *= 2;
 // console.log(x);
-// x += 10; // 62
+// x += 10;
 // console.log(x);
 // x--; // 61
+// x++;
 // console.log(x);
 
 ///////////////////////////////////////////////////////////////////
@@ -637,71 +642,189 @@
 /////////////////////////////////////////////////////////////////
 // Coding Challenge 5
 
-var billJohn = {
-    tip: [],
-    total: [],
-    amount: [124, 48, 268, 180, 42],
+// var billJohn = {
+//     tip: [],
+//     total: [],
+//     amount: [124, 48, 268, 180, 42],
+//     calcTip: function() {
+//         for(var i = 0; i < this.amount.length; i++) {
+//             var percentage;
+//             var bill = this.amount[i]
+//             if(bill < 50) {
+//                 percentage = 0.2
+//                 this.tip.push(bill * percentage)
+//             } else if(bill < 200) {
+//                 percentage = 0.15
+//                 this.tip.push(bill * percentage)
+//             } else {
+//                 percentage = 0.1
+//                 this.tip.push(bill * percentage)
+//             }
+//             this.total.push(this.tip[i] + bill)
+//         }
+//     }
+// }
+
+// billJohn.calcTip();
+// console.log(billJohn)
+
+// var billMark = {
+//     tip: [],
+//     total: [],
+//     amount: [77, 475, 110, 45],
+//     calcTip: function() {
+//         for(var i = 0; i < this.amount.length; i++) {
+//             var percentage;
+//             var bill = this.amount[i]
+//             if(bill < 100) {
+//                 percentage = 0.2
+//                 this.tip.push(bill * percentage)
+//             } else if(bill < 300) {
+//                 percentage = 0.1
+//                 this.tip.push(bill * 0.1)
+//             } else {
+//                 percentage = 0.25
+//                 this.tip.push(bill * 0.25)
+//             }
+//             this.total.push(this.tip[i] + bill)
+//         }
+//     }
+// }
+
+// function calculateAvg (tip) {
+//     var totalAverage = 0;
+//     for(var i = 0; i < tip.length; i++) {
+//         totalAverage = totalAverage + tip[i];
+//     }
+//     return totalAverage / tip.length
+// }
+
+// billMark.calcTip();
+// console.log(billMark)
+
+// billJohn.average = calculateAvg(billJohn.tip)
+// billMark.average = calculateAvg(billMark.tip)
+
+// if (billJohn.average > billMark.average) {
+//     console.log('bill John is higher with ' + billJohn.average)
+// } else {
+//     console.log('bill Mark is higher with ' + billMark.average)
+// }
+
+/*
+    John and his family went to 5 different restaurants. The bills were $124, $48, $268, $180 and $42.
+    John likes to tip 20% of the bill when the bill is less than $50,
+    15% when the bill is between $50 and $200
+    10% when the bill is more $200
+
+    Implement a tip calculator using objects and loops:
+    1) Create an object with an array for the bill values
+    2) Add a method to calculate the tip
+    3) This method should include a loop to iterate over all the paid bills and do the tip calculation
+    4) As an output, create 1) a new array containing all tips, and 2) an array containng final paid amounts ( bill + tip ). HINT: Start with two empty arrays [] 
+    as properties and then fill them up in the loop.
+    5) Implement the same functionality as before, this time using Mark's tipping rules
+    
+    EXTRA: Mark's family also went on the holiday, going to 4 different restaurants. The bills were: $77, $375, $110 and $45
+    Mark likes to tip 20% of the bill when the bill is less than $100.
+    10% when the bill is between $100 and $300
+    25% if the bill is more than $300
+
+
+    6) Create a function(not a method) to calculate the average of a given array of tips. HINT: Loops over the array, and in each iteration store the current sum in a variable(starting from 0).
+    After you have the sum of the array, divide it by the number of elements in it(that's how you calculate the average)
+    7) Calculate the average tip for each family
+    8) Log to the console which family paid the highest tips of average
+*/
+
+const billJohn = {
+    tips: [],
+    finalValue: [],
+    bills: [124, 48, 268, 180, 42],
     calcTip: function() {
-        for(var i = 0; i < this.amount.length; i++) {
-            var percentage;
-            var bill = this.amount[i]
-            if(bill < 50) {
-                percentage = 0.2
-                this.tip.push(bill * percentage)
-            } else if(bill < 200) {
-                percentage = 0.15
-                this.tip.push(bill * percentage)
+        let percentage;
+        for(let i = 0; i < this.bills.length; i++) {
+            if(this.bills[i] < 50) {
+                percentage = .2
+            } else if (this.bills[i] < 200) {
+                percentage = .15
             } else {
-                percentage = 0.1
-                this.tip.push(bill * percentage)
+                percentage = .1
             }
-            this.total.push(this.tip[i] + bill)
+            this.tips.push(this.bills[i] * percentage)
+            this.finalValue.push(this.bills[i] + this.tips[i])
         }
+    },
+    calcTotal: function() {
+        let finalTotal = 0;
+        // return this.bills.reduce((accumulator, currentValue) => accumulator + currentValue, 10);
+        for (let i = 0; i < this.bills.length; i++) {
+            finalTotal += this.bills[i]    
+        }
+        return finalTotal + 10;
     }
 }
 
 billJohn.calcTip();
-console.log(billJohn)
+console.log('calcTotal', billJohn.calcTotal());
+console.log(billJohn);
 
-var billMark = {
-    tip: [],
-    total: [],
-    amount: [77, 475, 110, 45],
+const billMark = {
+    tips: [],
+    finalValue: [],
+    bills: [77, 375, 110, 45],
     calcTip: function() {
-        for(var i = 0; i < this.amount.length; i++) {
-            var percentage;
-            var bill = this.amount[i]
-            if(bill < 100) {
-                percentage = 0.2
-                this.tip.push(bill * percentage)
-            } else if(bill < 300) {
-                percentage = 0.1
-                this.tip.push(bill * 0.1)
+        for(let i = 0; i < this.bills[i]; i++) {
+            let percentage = 0;
+            if (this.bills[i] < 100) {
+                percentage = .2;
+            } else if(this.bills[i] < 300) {
+                percentage = .1
             } else {
-                percentage = 0.25
-                this.tip.push(bill * 0.25)
+                percentage = .25
             }
-            this.total.push(this.tip[i] + bill)
+            this.tips.push(this.bills[i] * percentage)
+            this.finalValue.push(this.bills[i] + this.tips[i])
         }
     }
-}
-
-function calculateAvg (tip) {
-    var totalAverage = 0;
-    for(var i = 0; i < tip.length; i++) {
-        totalAverage = totalAverage + tip[i];
-    }
-    return totalAverage / tip.length
 }
 
 billMark.calcTip();
 console.log(billMark)
 
-billJohn.average = calculateAvg(billJohn.tip)
-billMark.average = calculateAvg(billMark.tip)
+function calcAvg (tipTotal) {
+    // let avgTip = 0
+    // for(let i = 0; i < tipTotal.length; i++) {
+    //     avgTip += tipTotal[i];
+        
+    // }
+    // avgTip /= tipTotal.length
+    // return avgTip;
 
-if (billJohn.average > billMark.average) {
-    console.log('bill John is higher with ' + billJohn.average)
-} else {
-    console.log('bill Mark is higher with ' + billMark.average)
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    return tipTotal.reduce(reducer) / tipTotal.length
 }
+
+// // first 
+// accumulator = 10;
+// currentValue = 124;
+// return = 134
+// // second
+// accumulator = 134;
+// currentValue = 48;
+// return = 182
+
+// // third 
+// accumulator = 182
+// currentValue = 268
+// return = 450
+
+// // fourth
+// accumulator = 450
+// currentValue = 180
+// return = 630
+
+// // fifth
+// accumulator = 630
+// currentValue = 42
+// return = 672
