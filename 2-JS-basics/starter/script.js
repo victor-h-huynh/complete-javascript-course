@@ -2,12 +2,12 @@
  * Variables and data types
  */
 
-var firstName = 'John';
+// var firstName = 'John';
 // firstName = 'Maggie'
 // console.log(firstName);
 
 // var lastName = 'Smith';
-var age = 28;
+// var age = 28;
 
 // var fullAge = true;
 // console.log(fullAge);
@@ -737,73 +737,73 @@ var age = 28;
     8) Log to the console which family paid the highest tips of average
 */
 
-const billJohn = {
-    tips: [],
-    finalValue: [],
-    bills: [124, 48, 268, 180, 42],
-    calcTip: function() {
-        let percentage;
-        for(let i = 0; i < this.bills.length; i++) {
-            if(this.bills[i] < 50) {
-                percentage = .2
-            } else if (this.bills[i] < 200) {
-                percentage = .15
-            } else {
-                percentage = .1
-            }
-            this.tips.push(this.bills[i] * percentage)
-            this.finalValue.push(this.bills[i] + this.tips[i])
-        }
-    },
-    calcTotal: function() {
-        let finalTotal = 0;
-        // return this.bills.reduce((accumulator, currentValue) => accumulator + currentValue, 10);
-        for (let i = 0; i < this.bills.length; i++) {
-            finalTotal += this.bills[i]    
-        }
-        return finalTotal + 10;
-    }
-}
+// const billJohn = {
+//     tips: [],
+//     finalValue: [],
+//     bills: [124, 48, 268, 180, 42],
+//     calcTip: function() {
+//         let percentage;
+//         for(let i = 0; i < this.bills.length; i++) {
+//             if(this.bills[i] < 50) {
+//                 percentage = .2
+//             } else if (this.bills[i] < 200) {
+//                 percentage = .15
+//             } else {
+//                 percentage = .1
+//             }
+//             this.tips.push(this.bills[i] * percentage)
+//             this.finalValue.push(this.bills[i] + this.tips[i])
+//         }
+//     },
+//     calcTotal: function() {
+//         let finalTotal = 0;
+//         // return this.bills.reduce((accumulator, currentValue) => accumulator + currentValue, 10);
+//         for (let i = 0; i < this.bills.length; i++) {
+//             finalTotal += this.bills[i]    
+//         }
+//         return finalTotal + 10;
+//     }
+// }
 
-billJohn.calcTip();
-console.log('calcTotal', billJohn.calcTotal());
-console.log(billJohn);
+// billJohn.calcTip();
+// console.log('calcTotal', billJohn.calcTotal());
+// console.log(billJohn);
 
-const billMark = {
-    tips: [],
-    finalValue: [],
-    bills: [77, 375, 110, 45],
-    calcTip: function() {
-        for(let i = 0; i < this.bills[i]; i++) {
-            let percentage = 0;
-            if (this.bills[i] < 100) {
-                percentage = .2;
-            } else if(this.bills[i] < 300) {
-                percentage = .1
-            } else {
-                percentage = .25
-            }
-            this.tips.push(this.bills[i] * percentage)
-            this.finalValue.push(this.bills[i] + this.tips[i])
-        }
-    }
-}
+// const billMark = {
+//     tips: [],
+//     finalValue: [],
+//     bills: [77, 375, 110, 45],
+//     calcTip: function() {
+//         for(let i = 0; i < this.bills[i]; i++) {
+//             let percentage = 0;
+//             if (this.bills[i] < 100) {
+//                 percentage = .2;
+//             } else if(this.bills[i] < 300) {
+//                 percentage = .1
+//             } else {
+//                 percentage = .25
+//             }
+//             this.tips.push(this.bills[i] * percentage)
+//             this.finalValue.push(this.bills[i] + this.tips[i])
+//         }
+//     }
+// }
 
-billMark.calcTip();
-console.log(billMark)
+// billMark.calcTip();
+// console.log(billMark)
 
-function calcAvg (tipTotal) {
-    // let avgTip = 0
-    // for(let i = 0; i < tipTotal.length; i++) {
-    //     avgTip += tipTotal[i];
+// function calcAvg (tipTotal) {
+//     let avgTip = 0
+//     for(let i = 0; i < tipTotal.length; i++) {
+//         avgTip += tipTotal[i];
         
-    // }
-    // avgTip /= tipTotal.length
-    // return avgTip;
+//     }
+//     avgTip /= tipTotal.length
+//     return avgTip;
 
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    return tipTotal.reduce(reducer) / tipTotal.length
-}
+//     const reducer = (accumulator, currentValue) => accumulator + currentValue;
+//     return tipTotal.reduce(reducer) / tipTotal.length
+// }
 
 // // first 
 // accumulator = 10;
@@ -828,3 +828,31 @@ function calcAvg (tipTotal) {
 // accumulator = 630
 // currentValue = 42
 // return = 672
+
+/////////////////////////////////////////////////////////////////
+// Lecture: Hoisting
+
+// functions
+calculateAge(1965);
+
+function calculateAge(year) {
+    console.log(2016 - year);
+}
+
+// retirement(1956);
+var retirement = function(year) {
+    console.log(65 - (2016 - year));
+}
+
+// variables
+console.log(age);
+var age = 23;
+
+function foo() {
+    console.log(age);
+    var age = 65;
+    console.log(age);
+}
+
+foo();
+console.log(age);
