@@ -878,3 +878,8 @@
 //     // console.log(c)
 //     console.log(a + d);
 // }
+
+/////////////////////////////////////////////////////////////////
+// Lecture: The this keyword
+
+// console.log(this)
