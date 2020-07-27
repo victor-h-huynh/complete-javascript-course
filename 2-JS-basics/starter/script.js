@@ -891,26 +891,80 @@
 //     console.log(this);
 // }
 
-var john = {
-    name: 'John',
-    yearOfBirth: 1990,
-    calculateAge: function() {
-        console.log(this);
-        console.log(2016 - this.yearOfBirth);
+// var john = {
+//     name: 'John',
+//     yearOfBirth: 1990,
+//     calculateAge: function() {
+//         console.log(this);
+//         console.log(2016 - this.yearOfBirth);
 
-        // function innerFunction() {
-        //     console.log(this);
-        // }
-        // innerFunction();
-    }
-}
+//         // function innerFunction() {
+//         //     console.log(this);
+//         // }
+//         // innerFunction();
+//     }
+// }
 
-john.calculateAge();
+// john.calculateAge();
 
-var mike = {
-    name: 'Mike',
-    yearOfBirth: 1984
-};
+// var mike = {
+//     name: 'Mike',
+//     yearOfBirth: 1984
+// };
 
-mike.calculateAge = john.calculateAge;
-mike.calculateAge();
+// mike.calculateAge = john.calculateAge;
+// mike.calculateAge();
+
+/////////////////////////////////////////////////////////////////
+// Array Methods: Filter, Map
+
+const items = [
+    { name: 'Bike', price: 100},
+    { name: 'TV', price: 200},
+    { name: 'Album', price: 10},
+    { name: 'Book', price: 5},
+    { name: 'Phone', price: 500},
+    { name: 'Computer', price: 1000},
+    { name: 'Keyboard', price: 25}
+]
+
+// Filter
+// const itemFiltered = items.filter((item) => {
+//     return item.price <= 100
+// })
+
+// console.log(itemFiltered);
+
+// Map
+// const itemNames = items.map((item) => {
+//     return item.name
+// })
+
+// console.log(itemNames);
+
+// const itemPrices = items.map((item) => {
+//     return item.price
+// })
+
+// console.log(itemPrices);
+
+// Find
+// const foundItem = items.find((item) => {
+//     return item.name === 'Book'
+// })
+
+// console.log(foundItem);
+
+// ForEach
+
+// items.forEach((item) => {
+//     console.log(item.name)
+// })
+
+// Reduce
+
+const total = items.reduce((currentValue, item) => {
+    return currentValue + item.price
+}, 0)
+
+console.log(total)
