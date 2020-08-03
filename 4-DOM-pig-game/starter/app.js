@@ -71,3 +71,5 @@ function nextPlayer () {
 
     document.querySelector('.dice').style.display = 'none';
 }
+
+document.query...document.
